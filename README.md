@@ -5,11 +5,11 @@ mentioned in the doc for reformatting the iLO 4 flash:
 [https://support.hpe.com/hpesc/public/docDisplay?docId=a00048622en_us&docLocale=en_US](https://support.hpe.com/hpesc/public/docDisplay?docId=a00048622en_us&docLocale=en_US)
 [https://support.hpe.com/hpesc/public/docDisplay?docId=a00048622en_us&docLocale=en_US](https://support.hpe.com/hpesc/public/docDisplay?docId=a00048622en_us&docLocale=en_US)
 but no details are ever given. 
-some searching will turn up a few references to people using it
-and another HPE doc:
+
+Some searching will turn up a few references to people using it and another HPE doc:
 [https://support.hpe.com/hpesc/public/docDisplay?docId=emr_na-a00047494en_us](https://support.hpe.com/hpesc/public/docDisplay?docId=emr_na-a00047494en_us)
 that supposedly documents AuxPwrCycle but when you follow that link it's just 
-giving you a 'document is unavailable' message
+giving you a 'document is unavailable' message.
 
 Turns out what you want is to look at this documentation on the newer redfish
 based way to config the ilo [https://hewlettpackard.github.io/ilo-rest-api-docs/ilo4](https://hewlettpackard.github.io/ilo-rest-api-docs/ilo4)
@@ -19,7 +19,7 @@ but no description of what it does or how to use it.  Nope, before you ask
 this is only available in the redfish API, but the original mention was so
 vague you'd never know that
 
-the redfish API has been designed by someone with a bit of a clue and you can 
+The redfish API has been designed by someone with a bit of a clue and you can 
 actually ask it what's supported. convoluted PITA json crap, but still..
 
 doing a GET against `https://$host/redfish/v1/Systems/1/` will get you back
@@ -72,3 +72,6 @@ Sooner or later you end up in wireshark trying to debug and discover the
 Content-Length header is wrong and wireshark gives the actual bytes on the
 wire exposing the problem.
 
+
+These examples have the sole intent of being **simple** rather than
+convoluted and buried in dependencies and abstraction layers.
