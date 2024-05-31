@@ -64,7 +64,7 @@ the quotes in the json, quite clear when you grab the 'trace' output and even
 
 
 Problems I saw both with curl and LWP in perl were that something was translating 
-a double quote char " or 0x22 into a 'left double quote' 0xE2 0x80 0x9C 
+a double quote char " or 0x22 into a UTF-8 'left double quote' 0xE2 0x80 0x9C 
 followed by a 'right double quote' 0xE2 0x80 0x9D. This ended up being hard to debug
 as whenever you printed the string or looked at the contents of a file all of these 
 different quotes appeared exactly the same.
@@ -72,6 +72,8 @@ Sooner or later you end up in wireshark trying to debug and discover the
 Content-Length header is wrong and wireshark gives the actual bytes on the
 wire exposing the problem.
 
+Now json is 'supposed' to be utf-8 encoded, but the iLO4 doesn't like it,
+even if you add the correct charset to the Content-Type header
 
 These examples have the sole intent of being **simple** rather than
 convoluted and buried in dependencies and abstraction layers.
