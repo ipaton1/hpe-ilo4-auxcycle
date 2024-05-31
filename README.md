@@ -23,7 +23,7 @@ the redfish API has been designed by someone with a bit of a clue and you can
 actually ask it what's supported. convoluted PITA json crap, but still..
 
 doing a GET against `https://$host/redfish/v1/Systems/1/` will get you back
-a bit of json that describes what you need to do - have to be using http*s* and
+a bit of json that describes what you need to do - have to be using http**s** and
 authenticated to get it though.
 (bit of chicken and egg problem there, you need to know how to talk to it
  before you can get it to tell you how to talk to it, D'Oh)
@@ -54,8 +54,8 @@ buried in there under the Oem section you'll find this
 
 which gives you the target of 
 `/redfish/v1/Systems/1/Actions/Oem/Hp/ComputerSystemExt.SystemReset/`
-and the possible options of ColdBoot & AuxCycle... Yes *AuxCycle* when it was mentioned in
-the original doc as *AuxPwrCycle* - you've been searching for the wrong thing! 
+and the possible options of ColdBoot & AuxCycle... Yes **AuxCycle** when it was mentioned in
+the original doc as **Aux_Pwr_Cycle** - you've been searching for the wrong thing! 
 
 
 there's a way to do this with curl however I had lots of problems with curl mangling
